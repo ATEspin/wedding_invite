@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Test of my wedding</title>
+        <!-- <style></style> -->
+        <style>
+            body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+            background-color: #f8decc;
+            }
+
+            .envelope {
+            position: relative;
+            cursor: pointer;
+            }
+
+            .back {
+            position: relative;
+            width:450px;
+            height: 300px;
+            background-color: #f3985c;
+            }
+
+            .letter {
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            width:430px;
+            height: 280px;
+            top:10px;
+            left:10px;
+            transition: .2s;
+            }
+
+/* 
+            .letter:after {
+            position: absolute;
+            content:"";
+            width:30px;
+            height:30px;
+            background-color: #fff;
+            top:82px;
+            left: 82px;
+            box-shadow: 36px 0 #fff, 36px 36px #fff, 0px 36px #fff;
+            } */
+
+            .text {
+            text-align: center;
+            font-size: 17px;
+            font-family: arial;
+            margin-top:20px;
+            font-weight: bold;
+            }
+
+
+            .front {
+            position: absolute;
+            border-right: 230px solid #f58f2f;
+            border-top: 150px solid transparent;
+            border-bottom: 150px solid transparent;
+            height:0;
+            width:0;
+            top:0;
+            left:220px;
+            z-index:3;
+            }
+
+            .front:before {
+            content:"";
+            position: absolute;
+            border-left: 230px solid #f58f2f;
+            border-top: 150px solid transparent;
+            border-bottom: 150px solid transparent;
+            height:0;
+            width:0;
+            top:-150px;
+            left:-220px;
+            }
+
+            .front:after {
+            content:"";
+            position: absolute;
+            border-bottom: 160px solid #ec8525;
+            border-left: 225px solid transparent;
+            border-right:225px solid transparent;
+            height:0;
+            width:0;
+            top:-10px;
+            left:-220px;
+            }
+
+            .top {
+            position: absolute;
+            border-top: 150px solid #f7a457;
+            border-left: 225px solid transparent;
+            border-right:225px solid transparent;
+            height:0;
+            width:0;
+            top:0;
+            transform-origin: top;
+            transition: .4s;
+            }
+
+            .shadow {
+            position: absolute;
+            background-color: rgba(0,0,0,0.1);
+            width:450px;
+            height:20px;
+            top:320px;
+            border-radius:50%;
+            }
+
+            .envelope:hover .top {
+            transform: rotateX(180deg);
+            }
+
+            .envelope:hover .letter {
+            transform: translateY(-150px);
+            z-index:2;
+            }
+        </style>
+    </head>
+<body>
+    <div class="envelope">
+        <div class="back"></div>
+        <div class="letter">
+          <div class="text">Invitation</div>
+        </div>
+        <div class="front"></div>
+        <div class="top"></div>
+        <div class="shadow"></div>
+      </div>
+</body>
+</html>
