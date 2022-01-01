@@ -3,135 +3,333 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Test of my wedding</title>
-        <!-- <style></style> -->
         <style>
             body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height:100vh;
-            background-color: #f8decc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* height: 100vh; */
+
+                background-color: #e3e9ca;
+                background-image: url("/images/white_wood_background_seamless.jpg");
+                background-size: 100%;
             }
 
-            .envelope {
+
+        .timer{
+                font-weight: normal;
+            }
+
+        
+        .counter{
+        position: relative;
+        text-align: center;
+        top:20%;
+        /* color:rgb(0, 0, 0); */
+        font-size: 2vw;
+        font-family: 'Brush Script MT';
+        font-weight: bold;
+        /* transform: rotate(90deg); */
+        }
+
+        .text {
             position: relative;
-            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Brush Script MT';
+            /* margin-top:65px; */
+            color: rgb(209, 164, 105);
+            /* font-weight: bold; */
+            top: 10%;
+            transform: rotate(90deg);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+            flex: 24%;
+            max-width: 25%;
+            padding: 0 6px;
+        }
+
+
+            .card-container {
+                position: relative;
+                vertical-align: bottom;
+                perspective: 1000px;
+                text-align: center;
+                padding: 6px 6px 6px 6px;
+                /* border: 5px solid #ff0000; */
+                z-index: 0;
+            }
+
+            .card {
+            width: 100%;
+            height: 100%;
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+            }
+
+            img {
+            position: relative;
+            vertical-align: bottom;
+            border-radius: 5px;
+            box-shadow: -5px 5px 7px 2px #0000009c;
+            backface-visibility: hidden;
             }
 
             .back {
-            position: relative;
-            width:450px;
-            height: 300px;
-            background-color: #f3985c;
-            }
-
-            .letter {
+            display: flex;
             position: absolute;
-            background-color: rgb(255, 255, 255);
-            width:430px;
-            height: 280px;
-            top:10px;
-            left:10px;
-            transition: .2s;
+            background: rgb(138, 138, 138);
+            color: white;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            vertical-align: bottom;
+            border-radius: 5px;
+            box-shadow: -5px 5px 7px 2px #0000009c;
+            backface-visibility: hidden;
+            z-index: 1;
+            transform: rotateY(180deg);
             }
 
-/* 
-            .letter:after {
+            #invitation {
             position: absolute;
-            content:"";
-            width:30px;
-            height:30px;
-            background-color: #fff;
-            top:82px;
-            left: 82px;
-            box-shadow: 36px 0 #fff, 36px 36px #fff, 0px 36px #fff;
-            } */
+            background-color: #ffffff;
+            box-shadow: -5px 10px 10px 5px #0000009c;
+            height: 125%;
+            width: 200%;
+            margin-top: -15%;
+            margin-left: -45%;
+            border-radius: 5px;
+            color: black;
+            }
 
-            .text {
-            text-align: center;
-            font-size: 17px;
-            font-family: arial;
-            margin-top:20px;
-            font-weight: bold;
+            .card-container:hover .card {
+            transform: rotateY(180deg);
             }
 
 
-            .front {
-            position: absolute;
-            border-right: 230px solid #f58f2f;
-            border-top: 150px solid transparent;
-            border-bottom: 150px solid transparent;
-            height:0;
-            width:0;
-            top:0;
-            left:220px;
-            z-index:3;
-            }
+        #btnControl {
+    display: none;
+}
 
-            .front:before {
-            content:"";
-            position: absolute;
-            border-left: 230px solid #f58f2f;
-            border-top: 150px solid transparent;
-            border-bottom: 150px solid transparent;
-            height:0;
-            width:0;
-            top:-150px;
-            left:-220px;
-            }
+.btn {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #000;
+    display: block;
+    text-align: center;
+    left: 95%;
+    top: 95%;
+    border-width: 0px;
+}
 
-            .front:after {
-            content:"";
-            position: absolute;
-            border-bottom: 160px solid #ec8525;
-            border-left: 225px solid transparent;
-            border-right:225px solid transparent;
-            height:0;
-            width:0;
-            top:-10px;
-            left:-220px;
-            }
+.btn:hover {
+    background-image: linear-gradient(to bottom, #c3e3fa, #a5defb);
+}
 
-            .top {
-            position: absolute;
-            border-top: 150px solid #f7a457;
-            border-left: 225px solid transparent;
-            border-right:225px solid transparent;
-            height:0;
-            width:0;
-            top:0;
-            transform-origin: top;
-            transition: .4s;
-            }
 
-            .shadow {
-            position: absolute;
-            background-color: rgba(0,0,0,0.1);
-            width:450px;
-            height:20px;
-            top:320px;
-            border-radius:50%;
-            }
+.btn:active {
+    margin-left: 1px 1px 0;
+    box-shadow: -1px -1px 1px #000;
+    outline: 1px solid black;
+    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
+}
 
-            .envelope:hover .top {
-            transform: rotateX(180deg);
-            }
+#btnControl:checked + label > img{
+    width: 70px;
+    height: 74px;
+}
 
-            .envelope:hover .letter {
-            transform: translateY(-150px);
-            z-index:2;
-            }
+
         </style>
     </head>
 <body>
-    <div class="envelope">
-        <div class="back"></div>
-        <div class="letter">
-          <div class="text">Invitation</div>
-        </div>
-        <div class="front"></div>
-        <div class="top"></div>
-        <div class="shadow"></div>
-      </div>
+        <div class="row">
+            <div class="column">
+             <div class = "card-container" style="width: 61%; margin-left: 0%;">
+                <div class="card">
+                    <img src="/images/Photos for collage/image1.jpg" width="100%">
+                    <div class="back">Climbing</div>
+                  </div>
+             </div>
+              <div class = "card-container" style="width: 61%; margin-left: 0%;">
+                <div class="card" >
+                        <img src="/images/Photos for collage/image2.jpg" width="100%">
+                    <div class="back">Carcassonne</div>
+                  </div>
+             </div>
+
+              <div class = "card-container" style="width: 98%; margin-left: 0%;">
+                <div class="card">
+                    <img src="/images/Photos for collage/image3.jpg" width="100%">
+                    <div class="back">Carcassonne</div>
+                  </div>
+             </div>
+            </div>
+            <div class="column" style="margin-left: -9.75%;">
+                <div class = "card-container" style="width: 59%; margin-left: 0%;">
+                    <div class="card">
+                        <img src="/images/Photos for collage/image4.jpg" width="100%">
+                        <div class="back" >Carcassonne</div>
+                      </div>
+                 </div>
+
+              <div class = "card-container" style="width: 110%; margin-left: 0%;">
+                <div class="card">
+                    <img src="/images/Photos for collage/image5.jpg" width="100%">
+                    <div class="back">Carcassonne</div>
+                  </div>
+             </div>
+
+              <div class = "card-container" style="width: 73%; margin-left: 37%;">
+                <div class="card">
+                    <img src="/images/Photos for collage/image6.jpg" width="100%">
+                    <div class="back">Carcassonne</div>
+                  </div>
+             </div>
+
+            </div>
+            <div class="column" style="margin-left: -10.3%;">
+                <div class = "card-container" style="width: 196%; margin-left: 0%;">
+                    <div class="card">
+                        <img src="/images/Photos for collage/image8.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                 </div>
+
+                 <div class = "card-container" style="width: 62%; margin-left: 51%;z-index: 1;">
+                    <div class="card post" style="z-index: 10;">
+                        <img src="/images/Photos for collage/wedding image.jpg" width="100%">
+                        <div class="back" id = "invitation">
+                            <div class="counter">
+                                Sep 10th 2022
+                                <div id="timer" class = "timer"></div>
+                            </div>
+                        </div>
+                      </div>
+                 </div>
+
+                <div class = "card-container" style="width: 62%; margin-left: 51%;">
+                    <div class="card">
+                        <img src="/images/Photos for collage/image7.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                 </div>
+            </div>
+            <div class="column" style="margin-left: 3.3%;">
+                <div class = "card-container" style="width: 78%; margin-top: 51%">
+                    <div class="card">
+                        <img src="/images/Photos for collage/image9.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                    </div>
+
+
+                <div class = "card-container" style="width: 78%">
+                    <div class="card" id = "id1">
+                        <img src="/images/Photos for collage/image10.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                 </div>
+            </div>
+                
+          </div>
+
+          <button class = "btn" onmouseover="myFunction()" onmouseout="myFunction2()"></button>
+      
 </body>
+
+<script>
+
+        var img = document.getElementsByTagName("img");
+        var card = document.getElementsByClassName("card");
+        var back = document.getElementsByClassName("back");
+        var container = document.getElementsByClassName("card-container");
+        var invite = document.getElementById("invitation");
+
+    function myFunction() {
+        var i;
+        for (i = 0; i < img.length; i++) {
+            img[i].style.opacity = "0";
+            // container[i].style.transform = "scale(102%)";
+            back[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
+            img[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
+            card[i].style.transform = "rotateY(180deg)";
+            back[i].style.backgroundImage ="url('/images/Photos for collage/esteregg.jpg')";
+            back[i].style.backgroundAttachment = "fixed";
+            back[i].style.backgroundSize = "contain";
+            back[i].style.color = "transparent";
+        }
+        
+        invite.style.width = "100%";
+        invite.style.height = "100%";
+        invite.style.marginTop = "0%";
+        invite.style.marginLeft = "0%";
+        invite.style.color = "transparent";
+    }
+
+    function myFunction2(){
+        var i;
+        for (i = 0; i < img.length; i++) {
+            img[i].style.opacity = "1";
+            // container[i].style.transform = "";
+            back[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
+            img[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
+            card[i].style.transform = "";
+            back[i].style.backgroundImage ="";
+            back[i].style.backgroundAttachment = "";
+            back[i].style.color = "white";
+        }
+
+        invite.style.width = "200%";
+        invite.style.height = "120%";
+        invite.style.marginTop = "-15%";
+        invite.style.marginLeft = "-45%";
+        invite.style.color = "black";
+    }
+
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 10, 2022 12:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "We are married!";
+    }
+    }, 1000);
+    </script>
 </html>
