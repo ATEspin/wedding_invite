@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Test of my wedding</title>
+        <style>
+            body {
+                display: flex;
+                /* align-items: center; */
+                /* justify-content: center; */
+                flex-direction: column;
+                /* height: 100vh; */
+
+                background-color: #e3e9ca;
+                background-image: url("./images/white_wood_background_seamless.jpg");
+                background-size: 100%;
+            }
+
+
+        .timer{
+                font-weight: normal;
+            }
+
+        
+        .counter{
+        position: relative;
+        text-align: center;
+        top:20%;
+        /* color:rgb(0, 0, 0); */
+        font-size: 2vw;
+        font-family: 'Brush Script MT';
+        font-weight: bold;
+        /* transform: rotate(90deg); */
+        }
+
+        .text {
+            position: relative;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Brush Script MT';
+            /* margin-top:65px; */
+            color: rgb(209, 164, 105);
+            /* font-weight: bold; */
+            top: 10%;
+            transform: rotate(90deg);
+        }
+
+        .row {
+            display: flex;
+            /* flex-wrap: wrap; */
+            padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+            flex: 24%;
+            max-width: 25%;
+            padding: 0 6px;
+        }
+
+
+            .card-container {
+                position: relative;
+                vertical-align: bottom;
+                perspective: 1000px;
+                text-align: center;
+                padding: 6px 6px 6px 6px;
+                border: 5px solid #ff0000;
+                z-index: 0;
+                
+            }
+
+            .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+            z-index: 10;
+            }
+
+            img {
+            position: relative;
+            vertical-align: bottom;
+            border-radius: 5px;
+            box-shadow: -5px 5px 7px 2px #0000009c;
+            backface-visibility: hidden;
+            overflow: hidden;
+            }
+
+            .back {
+            display: flex;
+            position: absolute;
+            background: rgb(138, 138, 138);
+            color: white;
+            width: 100%;
+            height: 100%;
+            /* margin-top: -10%;
+            margin-left: -15%; */
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            font-size: 1vw;
+            vertical-align: bottom;
+            border-radius: 5px;
+            box-shadow: -5px 5px 7px 2px #0000009c;
+            backface-visibility: hidden;
+            z-index: 2;
+            transform: rotateY(180deg);
+            overflow: hidden;
+            }
+
+            #invitation {
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: -5px 10px 10px 5px #0000009c;
+            height: 125%;
+            width: 200%;
+            margin-top: -15%;
+            margin-left: -45%;
+            border-radius: 5px;
+            color: black;
+            }
+
+            .card-container:hover .card {
+            transform: rotateY(180deg);
+            }
+
+            .card-container:hover {
+            z-index: 10;
+            }
+
+
+        #btnControl {
+    display: none;
+}
+
+.btn {
+    /* position: fixed; */
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.153);
+    /* display: block; */
+    text-align: center;
+    /* left: 95%; */
+    /* top: 95%; */
+    border-width: 0px;
+}
+
+.btn:hover {
+    background-image: linear-gradient(to bottom, #c3e3fa, #a5defb);
+}
+
+
+.btn:active {
+    margin-left: 1px 1px 0;
+    box-shadow: -1px -1px 1px #000;
+    outline: 1px solid black;
+    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
+}
+
+#btnControl:checked + label > img{
+    width: 70px;
+    height: 74px;
+}
+
+.languages{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    /* flex-wrap: wrap; */
+    /* align-content: left; */
+    margin-bottom: 10px;
+    margin-left: 12px;
+    /* border: 2px solid #ff0000; */
+}
+
+a{
+    width: 35px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: -5px 5px 7px 2px #0000009c;
+}
+
+a:hover{
+    transform: scale(120%);
+    opacity: 1;
+}
+
+.a1{
+    border: 2px solid #00ff0d;
+    background-image: url("images/can.png");
+    background-size: contain;
+}
+
+.a2{
+    /* border: 5px solid #ff0000; */
+    background-image: url("images/esp.png");
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.a3{
+    /* border: 5px solid #ff0000; */
+    background-image: url("images/cat.png");
+    background-size: contain;
+    opacity: 0.5;
+}
+
+        </style>
+    </head>
+<body>  
+        <div class = "row">
+            <div class = "languages">
+                <a class = "a1" href="./catalan.html"></a>
+                <a class = "a2" href="./catalan.html"></a>
+                <a class = "a3" href="./catalan.html"></a>
+                <button class = "btn" onmouseover="myFunction()" onmouseout="myFunction2()"></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+             <div class = "card-container" style="width: 61%; margin-left: 0%;">
+                <div class="card">
+                    <img src="./images/image1.jpg" width="100%">
+                    <div class="back">Climbing in Yosemite, California, 2019. Everything about this park was stunning. And hot. Our shoes started melting on the rocks. </div>
+                  </div>
+             </div>
+              <div class = "card-container" style="width: 61%; margin-left: 0%;">
+                <div class="card" >
+                        <img src="./images/image2.jpg" width="100%">
+                    <div class="back">No trip is complete without Carcassonne. Allison’s go-to strategy: sneaky farmers. Abel’s go-to strategy: random.</div>
+                  </div>
+             </div>
+
+              <div class = "card-container" style="width: 98%; margin-left: 0%;">
+                <div class="card">
+                    <img src="./images/image3.jpg" width="100%">
+                    <div class="back">Climbing at Grassi Lakes, Alberta, 2019. Canmore is very special for us – it is our dream to live there one day.</div>
+                  </div>
+             </div>
+            </div>
+            <div class="column" style="margin-left: -8.5%;">
+                <div class = "card-container" style="width: 59%; margin-left: 0%;">
+                    <div class="card">
+                        <img src="./images/image4.jpg" width="100%">
+                        <div class="back" >Getting drunk on a Sonoma Valley wine tour, California, 2021.</div>
+                      </div>
+                 </div>
+
+              <div class = "card-container" style="width: 110%; margin-left: 0%;">
+                <div class="card">
+                    <img src="./images/image5.jpg" width="100%">
+                    <div class="back">Mount Edith Cavell, Alberta, 2018. Although we aren’t great skiers, a backcountry cross country ski trip in -30ºC seemed like a great idea.</div>
+                  </div>
+             </div>
+
+              <div class = "card-container" style="width: 73%; margin-left: 37%;">
+                <div class="card">
+                    <img src="./images/image6.jpg" width="100%">
+                    <div class="back">Burstall Pass, Alberta, 2021. Vallies, a summit, golden larches, lakes, dark chocolate… what’s not to love?</div>
+                  </div>
+             </div>
+
+            </div>
+            <div class="column" style="margin-left: -9%;">
+                <div class = "card-container" style="width: 63%; margin-left: 0%;">
+                    <div class="card">
+                        <img src="./images/image_x1.jpg" width="100%">
+                        <div class="back">Neurohike conference in Kananaskis, Alberta, 2014. This is where we met – eating s’mores and talking about neuroscience. </div>
+                      </div>
+                 </div>
+
+                 <div class = "card-container" style="width: 62%; margin-left: 51%;z-index: 1;">
+                    <div class="card" style="z-index: 10;">
+                        <img src="./images/wedding image.jpg" width="100%">
+                        <div class="back" id = "invitation">
+                            <div class="counter">
+                                Sep 10th 2022
+                                <div id="timer" class = "timer"></div>
+                            </div>
+                        </div>
+                      </div>
+                 </div>
+
+                <div class = "card-container" style="width: 62%; margin-left: 51%;">
+                    <div class="card">
+                        <img src="./images/image7.jpg" width="100%">
+                        <div class="back">Backcountry hike to Skoki Mountain, Alberta, 2015. Just before we started dating. We look happy because we didn’t know that there was 7 hours of walking through a swamp in the rain and snow ahead of us.</div>
+                      </div>
+                 </div>
+            </div>
+            <div class="column" style="margin-left: 3.3%;">
+
+                <div class = "card-container" style="width: 196%; margin-left: -50%;">
+                    <div class="card">
+                        <img src="./images/image8.jpg" width="100%">
+                        <div class="back">
+                            Backcountry hike to Mount Assiniboine, British Columbia, 2016. Hiking over 30km in one day almost killed us, but it was worth it!</div>
+                      </div>
+                 </div>
+
+                <div class = "card-container" style="width: 77%; margin-top: 0%">
+                    <div class="card">
+                        <img src="./images/image10.jpg" width="100%">
+                        <div class="back">City hiking in San Francisco, 2019. 360 view of the city while exploring the MANY hills of SF.</div>
+                      </div>
+                    </div>
+
+
+                <div class = "card-container" style="width: 76%">
+                    <div class="card" id = "id1">
+                        <img src="./images/imagen_x2.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                 </div>
+            </div>
+
+            <div class = "column" style ="margin-left: -5%; margin-top: 12.2%;">
+
+                <div class = "card-container" style="width: 74%;">
+                    <div class="card">
+                        <img src="./images/image_x3.jpg" width="100%">
+                        <div class="back">Carcassonne</div>
+                      </div>
+                    </div>
+
+
+                <div class = "card-container" style="width: 74%">
+                    <div class="card" id = "id1">
+                        <img src="./images/image9.jpg" width="100%">
+                        <div class="back">Golden Gate Bridge, San Francisco, 2021. Having fun around California after a year and a half of being apart thanks to Covid. We proposed to each other on this visit in Abel’s apartment :)</div>
+                      </div>
+                 </div>
+            </div>
+                
+          </div>
+      
+</body>
+
+<script>
+
+        var img = document.getElementsByTagName("img");
+        var card = document.getElementsByClassName("card");
+        var back = document.getElementsByClassName("back");
+        var container = document.getElementsByClassName("card-container");
+        var invite = document.getElementById("invitation");
+
+    function myFunction() {
+        var i;
+        for (i = 0; i < img.length; i++) {
+            img[i].style.opacity = "0";
+            // container[i].style.transform = "scale(102%)";
+            back[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
+            img[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
+            card[i].style.transform = "rotateY(180deg)";
+            back[i].style.backgroundImage ="url('./images/esteregg.jpg')";
+            back[i].style.backgroundAttachment = "fixed";
+            back[i].style.backgroundSize = "contain";
+            back[i].style.color = "transparent";
+        }
+        
+        invite.style.width = "100%";
+        invite.style.height = "100%";
+        invite.style.marginTop = "0%";
+        invite.style.marginLeft = "0%";
+        invite.style.color = "transparent";
+    }
+
+    function myFunction2(){
+        var i;
+        for (i = 0; i < img.length; i++) {
+            img[i].style.opacity = "1";
+            // container[i].style.transform = "";
+            back[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
+            img[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
+            card[i].style.transform = "";
+            back[i].style.backgroundImage ="";
+            back[i].style.backgroundAttachment = "";
+            back[i].style.color = "white";
+        }
+
+        invite.style.width = "200%";
+        invite.style.height = "120%";
+        invite.style.marginTop = "-15%";
+        invite.style.marginLeft = "-45%";
+        invite.style.color = "black";
+    }
+
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 10, 2022 12:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "We are married!";
+    }
+    }, 1000);
+    </script>
+</html>

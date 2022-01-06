@@ -2,17 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <title>Test of my wedding</title>
+        <title>A&A wedding save the date</title>
         <style>
             body {
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                /* align-items: center; */
+                /* justify-content: center; */
+                flex-direction: column;
                 /* height: 100vh; */
 
                 background-color: #e3e9ca;
                 background-image: url("./images/white_wood_background_seamless.jpg");
                 background-size: 100%;
+                /* min-height: 100%; */
             }
 
 
@@ -46,16 +48,22 @@
 
         .row {
             display: flex;
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             padding: 0 4px;
         }
 
-        /* Create four equal columns that sits next to each other */
-        .column {
-            flex: 24%;
-            max-width: 25%;
-            padding: 0 6px;
+        .grid {
+            display: grid;
+            /* flex-wrap: wrap; */
+            /* grid-gap: 5px 5px; */
+            /* padding: 0 4px; */
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(10, 4.4vw);
+            grid-auto-rows: minmax(10px, auto);
+            grid-gap: 4px 4px;
         }
+
+        /* Create four equal columns that sits next to each other */
 
 
             .card-container {
@@ -63,16 +71,19 @@
                 vertical-align: bottom;
                 perspective: 1000px;
                 text-align: center;
-                padding: 6px 6px 6px 6px;
+                padding: 7px 7px 7px 7px;
                 /* border: 5px solid #ff0000; */
                 z-index: 0;
+                
             }
 
             .card {
+            position: relative;
             width: 100%;
             height: 100%;
             transition: all 0.6s ease;
             transform-style: preserve-3d;
+            z-index: 10;
             }
 
             img {
@@ -81,6 +92,10 @@
             border-radius: 5px;
             box-shadow: -5px 5px 7px 2px #0000009c;
             backface-visibility: hidden;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             }
 
             .back {
@@ -94,13 +109,17 @@
             left: 0;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 1vw;
             vertical-align: bottom;
             border-radius: 5px;
             box-shadow: -5px 5px 7px 2px #0000009c;
             backface-visibility: hidden;
-            z-index: 1;
+            z-index: 2;
             transform: rotateY(180deg);
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5% 10%;
             }
 
             #invitation {
@@ -119,22 +138,26 @@
             transform: rotateY(180deg);
             }
 
+            .card-container:hover {
+            z-index: 10;
+            }
+
 
         #btnControl {
     display: none;
 }
 
 .btn {
-    position: fixed;
-    width: 20px;
-    height: 20px;
+    /* position: fixed; */
+    width: 25px;
+    height: 25px;
     background: transparent;
     border-radius: 50%;
-    box-shadow: 1px 1px 1px #000;
-    display: block;
+    box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.153);
+    /* display: block; */
     text-align: center;
-    left: 95%;
-    top: 95%;
+    /* left: 95%; */
+    /* top: 95%; */
     border-width: 0px;
 }
 
@@ -155,65 +178,110 @@
     height: 74px;
 }
 
+.languages{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    /* flex-wrap: wrap; */
+    /* align-content: left; */
+    margin-bottom: 10px;
+    margin-left: 12px;
+    /* border: 2px solid #ff0000; */
+}
+
+a{
+    width: 35px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: -5px 5px 7px 2px #0000009c;
+}
+
+a:hover{
+    transform: scale(120%);
+    opacity: 1;
+}
+
+.a1{
+    border: 2px solid #00ff0d;
+    background-image: url("images/can.png");
+    background-size: contain;
+}
+
+.a2{
+    /* border: 5px solid #ff0000; */
+    background-image: url("images/esp.png");
+    background-size: contain;
+    opacity: 0.5;
+}
+
+.a3{
+    /* border: 5px solid #ff0000; */
+    background-image: url("images/cat.png");
+    background-size: contain;
+    opacity: 0.5;
+}
 
         </style>
     </head>
-<body>
-        <div class="row">
-            <div class="column">
-             <div class = "card-container" style="width: 61%; margin-left: 0%;">
+<body>  
+        <div class = "row">
+            <div class = "languages">
+                <a class = "a1" href="./catalan.html"></a>
+                <a class = "a2" href="./catalan.html"></a>
+                <a class = "a3" href="./catalan.html"></a>
+                <button class = "btn" onmouseover="myFunction()" onmouseout="myFunction2()"></button>
+            </div>
+        </div>
+        <div class="grid">
+             <div class = "card-container" style="grid-column: 1/span 2; grid-row: 1/span 4;">
                 <div class="card">
-                    <img src="./images/image1.jpg" width="100%">
-                    <div class="back">Climbing</div>
+                    <img src="./images/image1.jpg" >
+                    <div class="back">Climbing in Yosemite, California, 2019. Everything about this park was stunning. And hot. Our shoes started melting on the rocks. </div>
                   </div>
              </div>
-              <div class = "card-container" style="width: 61%; margin-left: 0%;">
+              <div class = "card-container" style="grid-column: 1/span 2; grid-row: 5/span 2;">
                 <div class="card" >
                         <img src="./images/image2.jpg" width="100%">
-                    <div class="back">Carcassonne</div>
+                    <div class="back">No trip is complete without Carcassonne. Allison’s go-to strategy: sneaky farmers. Abel’s go-to strategy: random.</div>
                   </div>
              </div>
 
-              <div class = "card-container" style="width: 98%; margin-left: 0%;">
+              <div class = "card-container" style="grid-column: 1/span 3; grid-row: 7/span 3;">
                 <div class="card">
                     <img src="./images/image3.jpg" width="100%">
-                    <div class="back">Carcassonne</div>
+                    <div class="back">Climbing at Grassi Lakes, Alberta, 2019. Canmore is very special for us – it is our dream to live there one day.</div>
                   </div>
              </div>
-            </div>
-            <div class="column" style="margin-left: -9.75%;">
-                <div class = "card-container" style="width: 59%; margin-left: 0%;">
+                <div class = "card-container" style="grid-column: 3/span 2; grid-row: 1/span 3;">
                     <div class="card">
                         <img src="./images/image4.jpg" width="100%">
-                        <div class="back" >Carcassonne</div>
+                        <div class="back" >Getting drunk on a Sonoma Valley wine tour, California, 2021.</div>
                       </div>
                  </div>
 
-              <div class = "card-container" style="width: 110%; margin-left: 0%;">
+              <div class = "card-container" style="grid-column: 3/span 3; grid-row: 4/ span 3;">
                 <div class="card">
                     <img src="./images/image5.jpg" width="100%">
-                    <div class="back">Carcassonne</div>
+                    <div class="back">Mount Edith Cavell, Alberta, 2018. Although we aren’t great skiers, a backcountry cross country ski trip in -30ºC seemed like a great idea.</div>
                   </div>
              </div>
 
-              <div class = "card-container" style="width: 73%; margin-left: 37%;">
+              <div class = "card-container" style="grid-column: 4/span 2; grid-row: 7/span 3;">
                 <div class="card">
                     <img src="./images/image6.jpg" width="100%">
-                    <div class="back">Carcassonne</div>
+                    <div class="back">Burstall Pass, Alberta, 2021. Vallies, a summit, golden larches, lakes, dark chocolate… what’s not to love?</div>
                   </div>
              </div>
-
-            </div>
-            <div class="column" style="margin-left: -10.3%;">
-                <div class = "card-container" style="width: 196%; margin-left: 0%;">
+                <div class = "card-container" style="grid-column: 5/span 2; grid-row: 1/span 3;">
                     <div class="card">
-                        <img src="./images/image8.jpg" width="100%">
-                        <div class="back">Carcassonne</div>
+                        <img src="./images/image_x1.jpg" width="100%">
+                        <div class="back">Neurohike conference in Kananaskis, Alberta, 2014. This is where we met – eating s’mores and talking about neuroscience. </div>
                       </div>
                  </div>
 
-                 <div class = "card-container" style="width: 62%; margin-left: 51%;z-index: 1;">
-                    <div class="card post" style="z-index: 10;">
+                 <div class = "card-container" style="grid-column: 6/span 2; grid-row: 4/span 4;;z-index: 1;">
+                    <div class="card" style="z-index: 10;">
                         <img src="./images/wedding image.jpg" width="100%">
                         <div class="back" id = "invitation">
                             <div class="counter">
@@ -224,33 +292,52 @@
                       </div>
                  </div>
 
-                <div class = "card-container" style="width: 62%; margin-left: 51%;">
+                <div class = "card-container" style="grid-column: 6/span 2; grid-row: 8/span 2;">
                     <div class="card">
                         <img src="./images/image7.jpg" width="100%">
+                        <div class="back">Backcountry hike to Skoki Mountain, Alberta, 2015. Just before we started dating. We look happy because we didn’t know that there was 7 hours of walking through a swamp in the rain and snow ahead of us.</div>
+                      </div>
+                 </div>
+
+                <div class = "card-container" style="grid-column: 7/span 6; grid-row: 1/span 3;">
+                    <div class="card">
+                        <img src="./images/image8.jpg" width="100%">
+                        <div class="back">
+                            Backcountry hike to Mount Assiniboine, British Columbia, 2016. Hiking over 30km in one day almost killed us, but it was worth it!</div>
+                      </div>
+                 </div>
+
+                <div class = "card-container" style="grid-column: 8/span 3; grid-row: 4/span 3;">
+                    <div class="card">
+                        <img src="./images/image10.jpg" width="100%">
+                        <div class="back">City hiking in San Francisco, 2019. 360 view of the city while exploring the MANY hills of SF.</div>
+                      </div>
+                    </div>
+
+
+                <div class = "card-container" style="grid-column: 8/span 2; grid-row: 7/span 3;">
+                    <div class="card" id = "id1">
+                        <img src="./images/imagen_x2.jpg" width="100%">
                         <div class="back">Carcassonne</div>
                       </div>
                  </div>
-            </div>
-            <div class="column" style="margin-left: 3.3%;">
-                <div class = "card-container" style="width: 78%; margin-top: 51%">
+
+                <div class = "card-container" style="grid-column: 11/span 2; grid-row: 4/span 3;">
                     <div class="card">
-                        <img src="./images/image9.jpg" width="100%">
+                        <img src="./images/image_x3.jpg" width="100%">
                         <div class="back">Carcassonne</div>
                       </div>
                     </div>
 
 
-                <div class = "card-container" style="width: 78%">
+                <div class = "card-container" style="grid-column: 10/span 3; grid-row: 7/ span 3;">
                     <div class="card" id = "id1">
-                        <img src="./images/image10.jpg" width="100%">
-                        <div class="back">Carcassonne</div>
+                        <img src="./images/image9.jpg" width="100%">
+                        <div class="back">Golden Gate Bridge, San Francisco, 2021. Having fun around California after a year and a half of being apart thanks to Covid. We proposed to each other on this visit in Abel’s apartment :)</div>
                       </div>
                  </div>
-            </div>
                 
           </div>
-
-          <button class = "btn" onmouseover="myFunction()" onmouseout="myFunction2()"></button>
       
 </body>
 
@@ -273,7 +360,9 @@
             back[i].style.backgroundImage ="url('./images/esteregg.jpg')";
             back[i].style.backgroundAttachment = "fixed";
             back[i].style.backgroundSize = "contain";
+            // back[i].css({'background-repeat': 'no-repeat'});
             back[i].style.color = "transparent";
+            back[i].style.padding = "0% 0%";
         }
         
         invite.style.width = "100%";
@@ -294,6 +383,7 @@
             back[i].style.backgroundImage ="";
             back[i].style.backgroundAttachment = "";
             back[i].style.color = "white";
+            back[i].style.padding = "5% 10%";
         }
 
         invite.style.width = "200%";
