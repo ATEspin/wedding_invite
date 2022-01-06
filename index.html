@@ -40,10 +40,8 @@
             font-size: 20px;
             font-family: 'Brush Script MT';
             /* margin-top:65px; */
-            color: rgb(209, 164, 105);
             /* font-weight: bold; */
-            top: 10%;
-            transform: rotate(90deg);
+            padding: 5% 10%;
         }
 
         .row {
@@ -84,6 +82,8 @@
             transition: all 0.6s ease;
             transform-style: preserve-3d;
             z-index: 10;
+            background-repeat: no-repeat;
+            background-position: center;
             }
 
             img {
@@ -117,9 +117,7 @@
             z-index: 2;
             transform: rotateY(180deg);
             overflow: hidden;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 5% 10%;
+            /* padding: 5% 10%; */
             }
 
             #invitation {
@@ -166,18 +164,6 @@
 }
 
 
-.btn:active {
-    margin-left: 1px 1px 0;
-    box-shadow: -1px -1px 1px #000;
-    outline: 1px solid black;
-    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
-}
-
-#btnControl:checked + label > img{
-    width: 70px;
-    height: 74px;
-}
-
 .languages{
     display: flex;
     flex-direction: row;
@@ -206,6 +192,7 @@ a:hover{
     border: 2px solid #00ff0d;
     background-image: url("images/can.png");
     background-size: contain;
+    /* opacity: 0.5; */
 }
 
 .a2{
@@ -227,9 +214,9 @@ a:hover{
 <body>  
         <div class = "row">
             <div class = "languages">
-                <a class = "a1" href="./catalan.html"></a>
-                <a class = "a2" href="./catalan.html"></a>
-                <a class = "a3" href="./catalan.html"></a>
+                <a class = "a1" href="./index.html"></a>
+                <a class = "a2" href="./esp.html"></a>
+                <a class = "a3" href="./cat.html"></a>
                 <button class = "btn" onmouseover="myFunction()" onmouseout="myFunction2()"></button>
             </div>
         </div>
@@ -237,50 +224,70 @@ a:hover{
              <div class = "card-container" style="grid-column: 1/span 2; grid-row: 1/span 4;">
                 <div class="card">
                     <img src="./images/image1.jpg" >
-                    <div class="back">Climbing in Yosemite, California, 2019. Everything about this park was stunning. And hot. Our shoes started melting on the rocks. </div>
+                    <div class="back">
+                        <p class = "text">Climbing in Yosemite, California, 2019. Everything about this park was stunning. 
+                            And hot. Our shoes started melting on the rocks.</p> 
+                    </div>
                   </div>
              </div>
               <div class = "card-container" style="grid-column: 1/span 2; grid-row: 5/span 2;">
                 <div class="card" >
                         <img src="./images/image2.jpg" width="100%">
-                    <div class="back">No trip is complete without Carcassonne. Allison’s go-to strategy: sneaky farmers. Abel’s go-to strategy: random.</div>
+                    <div class="back">
+                        <p class = text>No trip is complete without Carcassonne. Allison’s go-to strategy: 
+                            sneaky farmers. Abel’s go-to strategy: random.</p>
+                        </div>
                   </div>
              </div>
 
               <div class = "card-container" style="grid-column: 1/span 3; grid-row: 7/span 3;">
                 <div class="card">
                     <img src="./images/image3.jpg" width="100%">
-                    <div class="back">Climbing at Grassi Lakes, Alberta, 2019. Canmore is very special for us – it is our dream to live there one day.</div>
+                    <div class="back">
+                        <p class = "text">Climbing at Grassi Lakes, Alberta, 2019. Canmore is very special for
+                             us – it is our dream to live there one day.</p>
+                    </div>
                   </div>
              </div>
                 <div class = "card-container" style="grid-column: 3/span 2; grid-row: 1/span 3;">
                     <div class="card">
                         <img src="./images/image4.jpg" width="100%">
-                        <div class="back" >Getting drunk on a Sonoma Valley wine tour, California, 2021.</div>
+                        <div class="back" >
+                            <p class = "text">Getting drunk on a Sonoma Valley wine tour, California, 2021.</p>
+                        </div>
                       </div>
                  </div>
 
               <div class = "card-container" style="grid-column: 3/span 3; grid-row: 4/ span 3;">
                 <div class="card">
                     <img src="./images/image5.jpg" width="100%">
-                    <div class="back">Mount Edith Cavell, Alberta, 2018. Although we aren’t great skiers, a backcountry cross country ski trip in -30ºC seemed like a great idea.</div>
+                    <div class="back">
+                        <p class = "text">Mount Edith Cavell, Alberta, 2018. Although we aren’t great skiers, 
+                            a backcountry cross country ski trip in -30ºC seemed like a great idea.</p>
+                    </div>
                   </div>
              </div>
 
               <div class = "card-container" style="grid-column: 4/span 2; grid-row: 7/span 3;">
                 <div class="card">
                     <img src="./images/image6.jpg" width="100%">
-                    <div class="back">Burstall Pass, Alberta, 2021. Vallies, a summit, golden larches, lakes, dark chocolate… what’s not to love?</div>
+                    <div class="back">
+                        <p class = "text">Burstall Pass, Alberta, 2021. Vallies, a summit, golden larches, 
+                            lakes, dark chocolate… what’s not to love?</p>
+                        </div>
                   </div>
              </div>
                 <div class = "card-container" style="grid-column: 5/span 2; grid-row: 1/span 3;">
                     <div class="card">
                         <img src="./images/image_x1.jpg" width="100%">
-                        <div class="back">Neurohike conference in Kananaskis, Alberta, 2014. This is where we met – eating s’mores and talking about neuroscience. </div>
+                        <div class="back">
+                            <p class = "text">Neurohike conference in Kananaskis, Alberta, 2014. 
+                                This is where we met – eating s’mores and talking about neuroscience.</p>
+                        </div>
                       </div>
                  </div>
 
-                 <div class = "card-container" style="grid-column: 6/span 2; grid-row: 4/span 4;;z-index: 1;">
+                 <div class = "card-container" style="grid-column: 6/span 2; grid-row: 4/span 4;z-index: 1;">
                     <div class="card" style="z-index: 10;">
                         <img src="./images/wedding image.jpg" width="100%">
                         <div class="back" id = "invitation">
@@ -295,7 +302,12 @@ a:hover{
                 <div class = "card-container" style="grid-column: 6/span 2; grid-row: 8/span 2;">
                     <div class="card">
                         <img src="./images/image7.jpg" width="100%">
-                        <div class="back">Backcountry hike to Skoki Mountain, Alberta, 2015. Just before we started dating. We look happy because we didn’t know that there was 7 hours of walking through a swamp in the rain and snow ahead of us.</div>
+                        <div class="back">
+                            <p class = "text">Backcountry hike to Skoki Mountain, Alberta, 2015. 
+                                Just before we started dating. We look happy because we didn’t 
+                                know that there was 7 hours of walking through a swamp in 
+                                the rain and snow ahead of us.</p>
+                        </div>
                       </div>
                  </div>
 
@@ -303,37 +315,50 @@ a:hover{
                     <div class="card">
                         <img src="./images/image8.jpg" width="100%">
                         <div class="back">
-                            Backcountry hike to Mount Assiniboine, British Columbia, 2016. Hiking over 30km in one day almost killed us, but it was worth it!</div>
+                            <p class = "text">Backcountry hike to Mount Assiniboine, British Columbia, 2016. 
+                                Hiking over 30km in one day almost killed us, but it was worth it!</p>
+                        </div>
                       </div>
                  </div>
 
                 <div class = "card-container" style="grid-column: 8/span 3; grid-row: 4/span 3;">
                     <div class="card">
                         <img src="./images/image10.jpg" width="100%">
-                        <div class="back">City hiking in San Francisco, 2019. 360 view of the city while exploring the MANY hills of SF.</div>
+                        <div class="back">
+                            <p class = "text">City hiking in San Francisco, 2019. 360 view of the city while 
+                                exploring the MANY hills of SF.</p>
+                        </div>
                       </div>
                     </div>
 
 
                 <div class = "card-container" style="grid-column: 8/span 2; grid-row: 7/span 3;">
-                    <div class="card" id = "id1">
+                    <div class="card">
                         <img src="./images/imagen_x2.jpg" width="100%">
-                        <div class="back">Carcassonne</div>
+                        <div class="back">
+                            <p class = "text">Carcassonne</p>
+                        </div>
                       </div>
                  </div>
 
                 <div class = "card-container" style="grid-column: 11/span 2; grid-row: 4/span 3;">
                     <div class="card">
                         <img src="./images/image_x3.jpg" width="100%">
-                        <div class="back">Carcassonne</div>
+                        <div class="back">
+                            <p class = "text">Carcassonne</p>
+                        </div>
                       </div>
                     </div>
 
 
                 <div class = "card-container" style="grid-column: 10/span 3; grid-row: 7/ span 3;">
-                    <div class="card" id = "id1">
+                    <div class="card">
                         <img src="./images/image9.jpg" width="100%">
-                        <div class="back">Golden Gate Bridge, San Francisco, 2021. Having fun around California after a year and a half of being apart thanks to Covid. We proposed to each other on this visit in Abel’s apartment :)</div>
+                        <div class="back">
+                            <p class = "text">Golden Gate Bridge, San Francisco, 2021. Having fun around California 
+                                after a year and a half of being apart thanks to Covid. 
+                                We proposed to each other on this visit in Abel’s apartment :)</p>
+                            </div>
                       </div>
                  </div>
                 
@@ -345,52 +370,26 @@ a:hover{
 
         var img = document.getElementsByTagName("img");
         var card = document.getElementsByClassName("card");
-        var back = document.getElementsByClassName("back");
-        var container = document.getElementsByClassName("card-container");
-        var invite = document.getElementById("invitation");
 
     function myFunction() {
         var i;
         for (i = 0; i < img.length; i++) {
             img[i].style.opacity = "0";
-            // container[i].style.transform = "scale(102%)";
-            back[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
             img[i].style.boxShadow = "0px 0px 0px 0px #0000009c";
-            card[i].style.transform = "rotateY(180deg)";
-            back[i].style.backgroundImage ="url('./images/esteregg.jpg')";
-            back[i].style.backgroundAttachment = "fixed";
-            back[i].style.backgroundSize = "contain";
-            // back[i].css({'background-repeat': 'no-repeat'});
-            back[i].style.color = "transparent";
-            back[i].style.padding = "0% 0%";
+            card[i].style.backgroundImage ="url('./images/esteregg.jpg')";
+            card[i].style.backgroundAttachment = "fixed";
+            card[i].style.backgroundSize = "contain";
         }
-        
-        invite.style.width = "100%";
-        invite.style.height = "100%";
-        invite.style.marginTop = "0%";
-        invite.style.marginLeft = "0%";
-        invite.style.color = "transparent";
     }
 
     function myFunction2(){
         var i;
+
         for (i = 0; i < img.length; i++) {
             img[i].style.opacity = "1";
-            // container[i].style.transform = "";
-            back[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
             img[i].style.boxShadow = "-5px 5px 7px 2px #0000009c";
-            card[i].style.transform = "";
-            back[i].style.backgroundImage ="";
-            back[i].style.backgroundAttachment = "";
-            back[i].style.color = "white";
-            back[i].style.padding = "5% 10%";
+            card[i].style.backgroundImage ="";
         }
-
-        invite.style.width = "200%";
-        invite.style.height = "120%";
-        invite.style.marginTop = "-15%";
-        invite.style.marginLeft = "-45%";
-        invite.style.color = "black";
     }
 
     // Set the date we're counting down to
