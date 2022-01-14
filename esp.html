@@ -3,211 +3,32 @@
     <head>
         <meta charset="UTF-8"/>
         <title>A&A wedding save the date</title>
+        <link rel="stylesheet" href="style.css">
         <style>
-            body {
-                display: flex;
-                /* align-items: center; */
-                /* justify-content: center; */
-                flex-direction: column;
-                /* height: 100vh; */
 
-                background-color: #e3e9ca;
-                background-image: url("./images/white_wood_background_seamless.jpg");
-                background-size: 100%;
-                /* min-height: 100%; */
+            .a1{
+                /* border: 2px solid #00ff0d; */
+                background-image: url("images/can.png");
+                background-size: contain;
+                opacity: 0.5;
             }
 
-
-        .timer{
-                font-weight: normal;
+            .a2{
+                border: 2px solid #00ff0d;
+                background-image: url("images/esp.png");
+                background-size: contain;
+                /* opacity: 0.5; */
             }
 
-        
-        .counter{
-        position: relative;
-        text-align: center;
-        top:20%;
-        /* color:rgb(0, 0, 0); */
-        font-size: 2vw;
-        font-family: 'Brush Script MT';
-        font-weight: bold;
-        /* transform: rotate(90deg); */
-        }
-
-        .text {
-            position: relative;
-            text-align: center;
-            font-size: 18px;
-            font-family: 'arial';
-            /* margin-top:65px; */
-            /* font-weight: bold; */
-            padding: 5% 10%;
-        }
-
-        .row {
-            display: flex;
-            /* flex-wrap: wrap; */
-            padding: 0 4px;
-        }
-
-        .grid {
-            display: grid;
-            /* flex-wrap: wrap; */
-            /* grid-gap: 5px 5px; */
-            /* padding: 0 4px; */
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(10, 4.4vw);
-            grid-auto-rows: minmax(10px, auto);
-            grid-gap: 4px 4px;
-        }
-
-        /* Create four equal columns that sits next to each other */
-
-
-            .card-container {
-                position: relative;
-                vertical-align: bottom;
-                perspective: 1000px;
-                text-align: center;
-                padding: 7px 7px 7px 7px;
-                /* border: 5px solid #ff0000; */
-                z-index: 0;
-                
+            .a3{
+                /* border: 2px solid #00ff0d; */
+                background-image: url("images/cat.png");
+                background-size: contain;
+                opacity: 0.5;
             }
-
-            .card {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: all 0.6s ease;
-            transform-style: preserve-3d;
-            z-index: 10;
-            background-repeat: no-repeat;
-            background-position: center;
-            }
-
-            img {
-            position: relative;
-            vertical-align: bottom;
-            border-radius: 5px;
-            box-shadow: -5px 5px 7px 2px #0000009c;
-            backface-visibility: hidden;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            }
-
-            .back {
-            display: flex;
-            position: absolute;
-            background: rgb(138, 138, 138);
-            color: white;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            align-items: center;
-            justify-content: center;
-            font-size: 1vw;
-            vertical-align: bottom;
-            border-radius: 5px;
-            box-shadow: -5px 5px 7px 2px #0000009c;
-            backface-visibility: hidden;
-            z-index: 2;
-            transform: rotateY(180deg);
-            overflow: hidden;
-            /* padding: 5% 10%; */
-            }
-
             #invitation {
-            position: absolute;
-            background-color: #ffffff;
-            box-shadow: -5px 10px 10px 5px #0000009c;
-            height: 125%;
-            width: 200%;
-            margin-top: -15%;
-            margin-left: -45%;
-            border-radius: 5px;
-            color: black;
+                background-image: url("images/save_esp.JPG");
             }
-
-            .card-container:hover .card {
-            transform: rotateY(180deg);
-            }
-
-            .card-container:hover {
-            z-index: 10;
-            }
-
-
-        #btnControl {
-    display: none;
-}
-
-.btn {
-    /* position: fixed; */
-    width: 25px;
-    height: 25px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.153);
-    /* display: block; */
-    text-align: center;
-    /* left: 95%; */
-    /* top: 95%; */
-    border-width: 0px;
-}
-
-.btn:hover {
-    background-image: linear-gradient(to bottom, #c3e3fa, #a5defb);
-}
-
-
-.languages{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    /* flex-wrap: wrap; */
-    /* align-content: left; */
-    margin-bottom: 10px;
-    margin-left: 12px;
-    /* border: 2px solid #ff0000; */
-}
-
-a{
-    width: 35px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 5px;
-    box-shadow: -5px 5px 7px 2px #0000009c;
-}
-
-a:hover{
-    transform: scale(120%);
-    opacity: 1;
-}
-
-.a1{
-    /* border: 2px solid #00ff0d; */
-    background-image: url("images/can.png");
-    background-size: contain;
-    opacity: 0.5;
-}
-
-.a2{
-    border: 2px solid #00ff0d;
-    background-image: url("images/esp.png");
-    background-size: contain;
-    /* opacity: 0.5; */
-}
-
-.a3{
-    /* border: 2px solid #00ff0d; */
-    background-image: url("images/cat.png");
-    background-size: contain;
-    opacity: 0.5;
-}
 
         </style>
     </head>
@@ -293,7 +114,6 @@ a:hover{
                         <img src="./images/wedding image.jpg" width="100%">
                         <div class="back" id = "invitation">
                             <div class="counter">
-                                Sep 10th 2022
                                 <div id="timer" class = "timer"></div>
                             </div>
                         </div>
