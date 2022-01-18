@@ -21,9 +21,9 @@
         position: absolute;
         text-align: left;
         top:85%;
-        left: 4%;
+        right: 4%;
         color:rgb(121, 121, 121);
-        font-size: 2.2vw;
+        font-size: 2.1vw;
         /* font-family: 'Brush Script MT'; */
         font-family: 'French Script MT';
         font-weight: bold;
@@ -33,7 +33,7 @@
         .text {
             position: relative;
             text-align: center;
-            font-size: 18px;
+            font-size: 1vw;
             font-family: 'arial';
             /* margin-top:65px; */
             /* font-weight: bold; */
@@ -149,7 +149,7 @@
     height: 25px;
     background: transparent;
     border-radius: 50%;
-    box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.153);
+    box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.1);
     /* display: block; */
     text-align: center;
     /* left: 95%; */
